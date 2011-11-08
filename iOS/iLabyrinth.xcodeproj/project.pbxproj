@@ -221,8 +221,6 @@
 		F074D6DF146919570044A335 /* map39.plist in Resources */ = {isa = PBXBuildFile; fileRef = F074D690146919570044A335 /* map39.plist */; };
 		F074D6E0146919570044A335 /* map40.plist in Resources */ = {isa = PBXBuildFile; fileRef = F074D691146919570044A335 /* map40.plist */; };
 		F074D6E1146919570044A335 /* map40.plist in Resources */ = {isa = PBXBuildFile; fileRef = F074D691146919570044A335 /* map40.plist */; };
-		F074D6F714691AEC0044A335 /* UDDM.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D6F614691AEC0044A335 /* UDDM.m */; };
-		F074D6F814691AEC0044A335 /* UDDM.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D6F614691AEC0044A335 /* UDDM.m */; };
 		F074D70314691AFB0044A335 /* UDMath.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D70014691AFB0044A335 /* UDMath.m */; };
 		F074D70414691AFB0044A335 /* UDMath.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D70014691AFB0044A335 /* UDMath.m */; };
 		F07F640B13D85DE400B15553 /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F07F635413D85DE400B15553 /* CCAction.m */; };
@@ -518,8 +516,6 @@
 		F074D68F146919570044A335 /* map38.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map38.plist; sourceTree = "<group>"; };
 		F074D690146919570044A335 /* map39.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map39.plist; sourceTree = "<group>"; };
 		F074D691146919570044A335 /* map40.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map40.plist; sourceTree = "<group>"; };
-		F074D6F514691AEC0044A335 /* UDDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDDM.h; sourceTree = "<group>"; };
-		F074D6F614691AEC0044A335 /* UDDM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDDM.m; sourceTree = "<group>"; };
 		F074D6FB14691AFB0044A335 /* UDMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDMacros.h; sourceTree = "<group>"; };
 		F074D6FF14691AFB0044A335 /* UDMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDMath.h; sourceTree = "<group>"; };
 		F074D70014691AFB0044A335 /* UDMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDMath.m; sourceTree = "<group>"; };
@@ -1019,18 +1015,8 @@
 			children = (
 				F074D6F914691AFB0044A335 /* UDMacros */,
 				F074D6FC14691AFB0044A335 /* UDMath */,
-				F074D6F414691AEC0044A335 /* UDDM */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		F074D6F414691AEC0044A335 /* UDDM */ = {
-			isa = PBXGroup;
-			children = (
-				F074D6F514691AEC0044A335 /* UDDM.h */,
-				F074D6F614691AEC0044A335 /* UDDM.m */,
-			);
-			path = UDDM;
 			sourceTree = "<group>";
 		};
 		F074D6F914691AFB0044A335 /* UDMacros */ = {
@@ -1769,7 +1755,6 @@
 				F07F64A913D85DE400B15553 /* SimpleAudioEngine.m in Sources */,
 				F07F64AB13D85DE400B15553 /* CDXMacOSXSupport.m in Sources */,
 				F07F64AD13D85DE400B15553 /* CDXPropertyModifierAction.m in Sources */,
-				F074D6F714691AEC0044A335 /* UDDM.m in Sources */,
 				F074D70314691AFB0044A335 /* UDMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1870,7 +1855,6 @@
 				F07F64AA13D85DE400B15553 /* SimpleAudioEngine.m in Sources */,
 				F07F64AC13D85DE400B15553 /* CDXMacOSXSupport.m in Sources */,
 				F07F64AE13D85DE400B15553 /* CDXPropertyModifierAction.m in Sources */,
-				F074D6F814691AEC0044A335 /* UDDM.m in Sources */,
 				F074D70414691AFB0044A335 /* UDMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
