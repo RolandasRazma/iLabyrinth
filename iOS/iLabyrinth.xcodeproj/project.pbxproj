@@ -221,8 +221,6 @@
 		F074D6DF146919570044A335 /* map39.plist in Resources */ = {isa = PBXBuildFile; fileRef = F074D690146919570044A335 /* map39.plist */; };
 		F074D6E0146919570044A335 /* map40.plist in Resources */ = {isa = PBXBuildFile; fileRef = F074D691146919570044A335 /* map40.plist */; };
 		F074D6E1146919570044A335 /* map40.plist in Resources */ = {isa = PBXBuildFile; fileRef = F074D691146919570044A335 /* map40.plist */; };
-		F074D70314691AFB0044A335 /* UDMath.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D70014691AFB0044A335 /* UDMath.m */; };
-		F074D70414691AFB0044A335 /* UDMath.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D70014691AFB0044A335 /* UDMath.m */; };
 		F07F640B13D85DE400B15553 /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F07F635413D85DE400B15553 /* CCAction.m */; };
 		F07F640C13D85DE400B15553 /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = F07F635413D85DE400B15553 /* CCAction.m */; };
 		F07F640D13D85DE400B15553 /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F07F635613D85DE400B15553 /* CCActionCamera.m */; };
@@ -517,8 +515,6 @@
 		F074D690146919570044A335 /* map39.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map39.plist; sourceTree = "<group>"; };
 		F074D691146919570044A335 /* map40.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = map40.plist; sourceTree = "<group>"; };
 		F074D6FB14691AFB0044A335 /* UDMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDMacros.h; sourceTree = "<group>"; };
-		F074D6FF14691AFB0044A335 /* UDMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDMath.h; sourceTree = "<group>"; };
-		F074D70014691AFB0044A335 /* UDMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDMath.m; sourceTree = "<group>"; };
 		F07F635313D85DE400B15553 /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		F07F635413D85DE400B15553 /* CCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAction.m; sourceTree = "<group>"; };
 		F07F635513D85DE400B15553 /* CCActionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionCamera.h; sourceTree = "<group>"; };
@@ -1014,7 +1010,6 @@
 			isa = PBXGroup;
 			children = (
 				F074D6F914691AFB0044A335 /* UDMacros */,
-				F074D6FC14691AFB0044A335 /* UDMath */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -1025,15 +1020,6 @@
 				F074D6FB14691AFB0044A335 /* UDMacros.h */,
 			);
 			path = UDMacros;
-			sourceTree = "<group>";
-		};
-		F074D6FC14691AFB0044A335 /* UDMath */ = {
-			isa = PBXGroup;
-			children = (
-				F074D6FF14691AFB0044A335 /* UDMath.h */,
-				F074D70014691AFB0044A335 /* UDMath.m */,
-			);
-			path = UDMath;
 			sourceTree = "<group>";
 		};
 		F07F635213D85DE400B15553 /* cocos2d */ = {
@@ -1755,7 +1741,6 @@
 				F07F64A913D85DE400B15553 /* SimpleAudioEngine.m in Sources */,
 				F07F64AB13D85DE400B15553 /* CDXMacOSXSupport.m in Sources */,
 				F07F64AD13D85DE400B15553 /* CDXPropertyModifierAction.m in Sources */,
-				F074D70314691AFB0044A335 /* UDMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1855,7 +1840,6 @@
 				F07F64AA13D85DE400B15553 /* SimpleAudioEngine.m in Sources */,
 				F07F64AC13D85DE400B15553 /* CDXMacOSXSupport.m in Sources */,
 				F07F64AE13D85DE400B15553 /* CDXPropertyModifierAction.m in Sources */,
-				F074D70414691AFB0044A335 /* UDMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
