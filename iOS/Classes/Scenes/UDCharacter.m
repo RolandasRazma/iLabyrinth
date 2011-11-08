@@ -245,7 +245,7 @@
 
 
 - (BOOL)isBussy {
-	return !![self numberOfRunningActions];
+	return ( [self numberOfRunningActions] != 0 );
 }
 
 
