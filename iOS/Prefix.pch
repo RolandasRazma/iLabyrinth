@@ -1,0 +1,14 @@
+//
+//  iLabyrinthPrefix.pch
+//  iLabyrinth
+//
+//  Created by Rolandas Razma on 5/12/10.
+//  Copyright 2010 UD7. All rights reserved.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    #import "cocos2d.h"
+    #import "UDMacros.h"
+#endif

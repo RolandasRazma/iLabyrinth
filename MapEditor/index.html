@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>UD7 Studios - iLabyrinth Map Builder</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" type="text/css" href="Resources/Style/main4.css">
+
+    <script type="text/javascript" src="Resources/JScript/jQuery/jQuery.js"></script>
+    <script type="text/javascript" src="Resources/JScript/jQuery/jQueryUI.js"></script>
+    <script type="text/javascript" src="Resources/JScript/main4.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-16442939-1']);
+        _gaq.push(['_trackPageview','iLabyrinth']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+
+    <div class="column column1" id="mapHolder">
+
+    </div>
+    <div class="column column2">
+        <div id="elements" style="height: 100%; padding: 5px;">
+            <input type="button" value="new" onClick="if( confirm('rly?') ) newMap();">
+            <input type="button" value="save" onClick="saveMap();">
+            <input type="button" value="load" onClick="if( confirm('rly?') ) loadMap();">
+            <hr>
+            <img src="Resources/Images/Clear.png" />
+            <img src="Resources/Images/Entrance.png" />
+            <img src="Resources/Images/Exit.png" />
+            <img src="Resources/Images/Blank.png" />
+            <hr>
+            <img src="Resources/Images/a/A16.png" />
+            <img src="Resources/Images/a/A4.png" />
+            <img src="Resources/Images/a/B2.png" />
+            <img src="Resources/Images/a/D2.png" />
+            <img src="Resources/Images/a/C16.png" />
+            <img src="Resources/Images/a/C4.png" />
+            <img src="Resources/Images/a/B8.png" />
+            <img src="Resources/Images/a/D8.png" />
+            <img src="Resources/Images/a/B16.png" />
+            <img src="Resources/Images/a/D4.png" />
+            <img src="Resources/Images/a/C2.png" />
+            <img src="Resources/Images/a/A8.png" />
+            <hr>
+            <input type="button" value="On/Off" onClick="changeHelpersState();" style="margin-bottom: 5px;">
+            <span id="helpers">
+                <input type="button" value="Up" onClick="moveHelpers(+1);" style="margin-bottom: 5px;">
+                <input type="button" value="Down" onClick="moveHelpers(-1);" style="margin-bottom: 5px;">
+            </span>
+            <div id="helpers">
+                <img src="Resources/Images/z/A256.png" />
+                <img src="Resources/Images/z/A1024.png" />
+                <img src="Resources/Images/z/B512.png" />
+                <img src="Resources/Images/z/D512.png" />
+                <img src="Resources/Images/z/C256.png" />
+                <img src="Resources/Images/z/C1024.png" />
+                <img src="Resources/Images/z/B128.png" />
+                <img src="Resources/Images/z/D128.png" />
+                <img src="Resources/Images/z/B256.png" />
+                <img src="Resources/Images/z/D1024.png" />
+                <img src="Resources/Images/z/C512.png" />
+                <img src="Resources/Images/z/A128.png" />
+            </div>
+            <hr>
+            <img src="Resources/Images/s/S8.png" />
+            <img src="Resources/Images/s/S6.png" />
+            <img src="Resources/Images/s/S15.png" />
+            <img src="Resources/Images/s/S12.png" />
+            <img src="Resources/Images/s/S7.png" />
+            <img src="Resources/Images/s/S1.png" />
+            <img src="Resources/Images/s/S3.png" />
+            <img src="Resources/Images/s/S4.png" />
+            <img src="Resources/Images/s/S14.png" />
+            <img src="Resources/Images/s/S13.png" />
+            <img src="Resources/Images/s/S10.png" />
+            <img src="Resources/Images/s/S9.png" />
+            <img src="Resources/Images/s/S2.png" />
+            <img src="Resources/Images/s/S11.png" />
+            <img src="Resources/Images/s/S16.png" />
+            <img src="Resources/Images/s/S5.png" />
+            <img src="Resources/Images/s/S32.png" />
+            <img src="Resources/Images/s/S33.png" />
+            <img src="Resources/Images/s/S31.png" />
+            <img src="Resources/Images/s/S34.png" />
+            <hr>
+            <img src="Resources/Images/s/S18.png" />
+            <img src="Resources/Images/s/S17.png" />
+            <img src="Resources/Images/s/S21.png" />
+            <img src="Resources/Images/s/S35.png" />
+            <img src="Resources/Images/s/S20.png" />
+            <img src="Resources/Images/s/S23.png" />
+            <img src="Resources/Images/s/S22.png" />
+            <img src="Resources/Images/s/S24.png" />
+            <img src="Resources/Images/s/S19.png" />
+            <img src="Resources/Images/s/S25.png" />
+            <img src="Resources/Images/s/S26.png" />
+            <img src="Resources/Images/s/S27.png" />
+            <img src="Resources/Images/s/S28.png" />
+            <img src="Resources/Images/s/S29.png" />
+            <img src="Resources/Images/s/S30.png" />
+            <hr>
+            <img src="Resources/Images/s/S44.png" />
+            <img src="Resources/Images/s/S45.png" />
+            <img src="Resources/Images/s/S41.png" />
+            <img src="Resources/Images/s/S50.png" />
+            <img src="Resources/Images/s/S42.png" />
+            <img src="Resources/Images/s/S43.png" />
+            <img src="Resources/Images/s/S46.png" />
+            <img src="Resources/Images/s/S47.png" />
+            <img src="Resources/Images/s/S49.png" />
+            <img src="Resources/Images/s/S48.png" />
+            <hr>
+            <img src="Resources/Images/s/S51.png" />
+            <img src="Resources/Images/s/S57.png" />
+            <img src="Resources/Images/s/S53.png" />
+            <img src="Resources/Images/s/S56.png" />
+            <img src="Resources/Images/s/S52.png" />
+            <img src="Resources/Images/s/S55.png" />
+            <img src="Resources/Images/s/S54.png" />
+            <img src="Resources/Images/s/S61.png" />
+            <img src="Resources/Images/s/S59.png" />
+            <img src="Resources/Images/s/S65.png" />
+            <img src="Resources/Images/s/S66.png" />
+            <img src="Resources/Images/s/S70.png" />
+            <img src="Resources/Images/s/S62.png" />
+            <img src="Resources/Images/s/S64.png" />
+            <img src="Resources/Images/s/S67.png" />
+            <img src="Resources/Images/s/S113.png" />
+            <img src="Resources/Images/s/S72.png" />
+            <img src="Resources/Images/s/S68.png" />
+            <img src="Resources/Images/s/S69.png" />
+            <img src="Resources/Images/s/S60.png" />
+            <img src="Resources/Images/s/S112.png" />
+            <img src="Resources/Images/s/S63.png" />
+            <img src="Resources/Images/s/S58.png" />
+            <img src="Resources/Images/s/S71.png" />
+            <img src="Resources/Images/s/S73.png" />
+            <img src="Resources/Images/s/S74.png" />
+            <img src="Resources/Images/s/S81.png" />
+            <img src="Resources/Images/s/S80.png" />
+            <img src="Resources/Images/s/S76.png" />
+            <img src="Resources/Images/s/S75.png" />
+            <img src="Resources/Images/s/S86.png" />
+            <img src="Resources/Images/s/S87.png" />
+            <img src="Resources/Images/s/S98.png" />
+            <img src="Resources/Images/s/S84.png" />
+            <img src="Resources/Images/s/S85.png" />
+            <img src="Resources/Images/s/S77.png" />
+            <img src="Resources/Images/s/S99.png" />
+            <img src="Resources/Images/s/S88.png" />
+            <img src="Resources/Images/s/S89.png" />
+            <img src="Resources/Images/s/S90.png" />
+            <img src="Resources/Images/s/S91.png" />
+            <img src="Resources/Images/s/S83.png" />
+            <img src="Resources/Images/s/S93.png" />
+            <img src="Resources/Images/s/S94.png" />
+            <img src="Resources/Images/s/S95.png" />
+            <img src="Resources/Images/s/S96.png" />
+            <img src="Resources/Images/s/S97.png" />
+            <img src="Resources/Images/s/S82.png" />
+            <img src="Resources/Images/s/S92.png" />
+            <hr>
+            <img src="Resources/Images/s/S39.png" />
+            <img src="Resources/Images/s/S40.png" />
+            <img src="Resources/Images/s/S37.png" />
+            <img src="Resources/Images/s/S38.png" />
+            <img src="Resources/Images/s/S36.png" />
+            <img src="Resources/Images/s/S114.png" />
+            <img src="Resources/Images/s/S115.png" />
+            <img src="Resources/Images/s/S116.png" />
+            <img src="Resources/Images/s/S117.png" />
+            <img src="Resources/Images/s/S118.png" />
+            <img src="Resources/Images/s/S119.png" />
+            <hr>
+            <img src="Resources/Images/s/S107.png" />
+            <img src="Resources/Images/s/S104.png" />
+            <img src="Resources/Images/s/S103.png" />
+            <img src="Resources/Images/s/S100.png" />
+            <img src="Resources/Images/s/S106.png" />
+            <img src="Resources/Images/s/S105.png" />
+            <img src="Resources/Images/s/S102.png" />
+            <img src="Resources/Images/s/S101.png" />
+            <img src="Resources/Images/s/S111.png" />
+            <img src="Resources/Images/s/S108.png" />
+            <img src="Resources/Images/s/S79.png" />
+            <img src="Resources/Images/s/S78.png" />
+            <img src="Resources/Images/s/S110.png" />
+            <img src="Resources/Images/s/S109.png" />
+            <hr>
+            <img src="Resources/Images/s/S126.png" />
+            <img src="Resources/Images/s/S120.png" />
+            <img src="Resources/Images/s/S122.png" />
+            <img src="Resources/Images/s/S121.png" />
+            <img src="Resources/Images/s/S124.png" />
+            <img src="Resources/Images/s/S125.png" />
+            <img src="Resources/Images/s/S123.png" />
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+body, html {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    font-family: Helvetica;
+    font-size: 12px;
+    color: black;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: black;
+    margin-top: 45px;
+}
+
+td {
+	width: 45px;
+	height:48px;
+	border: 1px solid #BEBEBE;
+}
+
+td img {
+	position: absolute;
+	z-index: 10;
+}
+
+input {
+	width: 60px;
+	border: 1px solid black;
+}
+
+fieldset {
+	-moz-border-radius: 5px;
+}
+
+.column {
+	height: 100%;
+	background-color: #BEBEBE;
+}
+
+.column1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 200px;
+    width: auto;
+}
+
+.column1 > .panel {
+	width: 100%;
+	height: 100%;
+    overflow: hidden;
+}
+
+.column2 {
+    position: absolute;
+    width: 215px;
+    right: 0px;
+    margin-left: auto;
+    top: 0px;
+    overflow: auto;
+    background-color: #D6D6D6;
+    border-left: 1px solid black;
+}
+
+.panel {
+	background-color: #BEBEBE;
+    overflow: auto;
+}
+
+img {
+    width: 45px;
+    height: 45px;
+}
+
+#elements img {
+    background-color: #BEBEBE;
+    z-index: 20;
+}
