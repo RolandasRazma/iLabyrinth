@@ -13,7 +13,6 @@
 #import "SimpleAudioEngine.h"
 #import "UDGameEndScene.h"
 #import "CCDirectorIOS.h"
-#import "UDDM.h"
 
 
 @interface UDAppDelegate (Private)
