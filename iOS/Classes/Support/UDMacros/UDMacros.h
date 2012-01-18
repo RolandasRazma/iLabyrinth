@@ -5,7 +5,7 @@
 //  Copyright 2009 UD7. All rights reserved.
 //
 
-#define _(format, ...) [[NSBundle mainBundle] localizedStringForKey: [NSString stringWithFormat:@"%@", [NSString stringWithFormat:format, ##__VA_ARGS__]] value:@"" table:nil]
+#define _(format, ...) [NSString stringWithFormat: [[NSBundle mainBundle] localizedStringForKey:format value:@"" table:nil] , ##__VA_ARGS__]
 #define MAX3(A,B,C) MAX(MAX(A, B), C)
 
 
