@@ -31,7 +31,7 @@
 
 
 - (void)dealloc {
-	[window release];
+	[_window release];
 	[super dealloc];
 }
 
@@ -43,11 +43,11 @@
 - (void)applicationDidFinishLaunching:(UIApplication*)application {
 
 	// Init the window
-	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 	// cocos2d will inherit these values
-	[window setUserInteractionEnabled:YES];	
-	[window setMultipleTouchEnabled:YES];
+	[_window setUserInteractionEnabled:YES];	
+	[_window setMultipleTouchEnabled:YES];
 
 	// before creating any layer, set the landscape mode
 	[[CCDirector sharedDirector] setDeviceOrientation:kCCDeviceOrientationLandscapeRight];
@@ -68,7 +68,7 @@
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];
 
-	EAGLView *glView = [EAGLView viewWithFrame: [window bounds]
+	EAGLView *glView = [EAGLView viewWithFrame: [_window bounds]
                                    pixelFormat: kEAGLColorFormatRGB565
                                    depthFormat: 0
                             preserveBackbuffer: NO
@@ -77,9 +77,9 @@
                                numberOfSamples: 0];
     [[CCDirector sharedDirector] setOpenGLView: glView];
 
-    [window addSubview:glView];
+    [_window addSubview:glView];
     
-	[window makeKeyAndVisible];
+	[_window makeKeyAndVisible];
     
     // Preload sounds
     [[SimpleAudioEngine sharedEngine] preloadEffect:@"click.caf"];
@@ -189,5 +189,5 @@
 }
 
 
-@synthesize window;
+@synthesize window=_window;
 @end

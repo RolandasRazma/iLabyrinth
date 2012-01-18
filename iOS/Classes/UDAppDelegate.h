@@ -11,7 +11,7 @@
 
 
 @interface UDAppDelegate : NSObject <UIApplicationDelegate> {
-	UIWindow    *window;
+	UIWindow    *_window;
     NSTimer     *_deviceOriantationTimer;
 }
 
