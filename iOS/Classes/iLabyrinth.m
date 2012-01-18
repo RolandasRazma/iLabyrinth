@@ -62,7 +62,7 @@ static iLabyrinth *_sharedInstance = nil;
 
 + (iLabyrinth *)sharedInstance {
 	@synchronized( [iLabyrinth class] ) {
-		if (!_sharedInstance) _sharedInstance = [[self alloc] init];
+		if ( !_sharedInstance ) _sharedInstance = [[self alloc] init];
 		return _sharedInstance;
 	}
 	// to avoid compiler warning
@@ -83,7 +83,7 @@ static iLabyrinth *_sharedInstance = nil;
 
 
 + (NSString *)texturePlistName {
-    if( [[CCDirector sharedDirector] contentScaleFactor] > 1 ) {
+    if( [[CCDirector sharedDirector] contentScaleFactor] > 1.0f ) {
         return @"sprites~ipad.plist";
     }
     
@@ -92,7 +92,7 @@ static iLabyrinth *_sharedInstance = nil;
 
 
 + (NSString *)textureName {
-    if( [[CCDirector sharedDirector] contentScaleFactor] > 1 ){
+    if( [[CCDirector sharedDirector] contentScaleFactor] > 1.0f ){
         return @"sprites~ipad.png";
     }
     
@@ -101,7 +101,7 @@ static iLabyrinth *_sharedInstance = nil;
 
 
 + (BOOL)hightRes {
-    if( [[CCDirector sharedDirector] contentScaleFactor] > 1 ){
+    if( [[CCDirector sharedDirector] contentScaleFactor] > 1.0f ){
         return YES;
     }
     

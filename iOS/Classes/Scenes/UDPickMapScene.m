@@ -45,6 +45,7 @@
 		
 		_winSize		= [[CCDirector sharedDirector] winSize];
 
+        // Add background
 		_backgroundLayer = [CCSpriteBatchNode batchNodeWithFile:[iLabyrinth textureName]];
 		[[_backgroundLayer texture] setAliasTexParameters];
 		[self addChild:_backgroundLayer];

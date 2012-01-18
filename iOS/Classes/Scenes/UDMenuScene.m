@@ -46,23 +46,23 @@
         
         CGSize _winSize = [[CCDirector sharedDirector] winSize];
 
+        // Add background
 		CCSprite *sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"menu%@.png", (isDeviceIPad()?@"~ipad":([iLabyrinth hightRes]?@"@2x":@""))]];
 		[sprite setAnchorPoint:CGPointZero];
 		[self addChild:sprite];
 
-        
 		_backgroundLayer = [CCSpriteBatchNode batchNodeWithFile:[iLabyrinth textureName]];
 		[[_backgroundLayer texture] setAliasTexParameters];
 		[self addChild:_backgroundLayer];
 
-		
+		// Add "Pay" button
 		CCSprite *playSprite = [CCSprite spriteWithSpriteFrameName:@"play.png"];
         [playSprite setTag:MenuButtonPlay];
         [playSprite setAnchorPoint:CGPointMake(0.5f, 0.0f)];
         [playSprite setPosition:CGPointMake(_winSize.width /2, _winSize.height /2)];
 		[_backgroundLayer addChild:playSprite];
 
-        
+		// Add "Help" button        
 		CCSprite *helpSprite = [CCSprite spriteWithSpriteFrameName:@"help.png"];
         [helpSprite setAnchorPoint:CGPointMake(0.5f, 1.0f)];
         [helpSprite setTag:MenuButtonHelp];

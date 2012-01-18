@@ -47,12 +47,13 @@
 		[[_backgroundLayer texture] setAliasTexParameters];
 		[self addChild:_backgroundLayer];
 		
+        // Add background
 		CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:@"sand.png"];
 		[sprite setAnchorPoint:CGPointZero];
 		[sprite setPosition:CGPointZero];
 		[_backgroundLayer addChild:sprite];
         
-        
+        // Construct look
 		CCSprite *endSprite = [CCSprite spriteWithSpriteFrameName:@"end.png"];
         [endSprite setAnchorPoint:CGPointMake(0.0f, 0.5f)];
         [endSprite setPosition:CGPointMake(0.0f, _winSize.height /2)];

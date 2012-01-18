@@ -61,24 +61,24 @@
 	
 	// Load
 	_mapNo = mapNo;
-		
-	uint width;
-	uint height;
-	
+
+    // Add background
 	CCSprite *sprite = [CCSprite spriteWithSpriteFrameName:@"sand.png"];
 	[sprite setAnchorPoint:CGPointMake(0, 0)];
 	[sprite setPosition:CGPointMake(0, 0)];
 	[_backgroundLayer addChild:sprite];
 	
+    // Add character
 	_char = [UDCharacter spriteWithSpriteFrameName:@"CH1.png"];
 	[_char setDelegate:self];
 	[_backgroundLayer addChild:_char z:10];
 		
-	// Load tiles
+	// Add tiles
 	NSString *path = [CCFileUtils fullPathFromRelativePath:[NSString stringWithFormat:@"map%02d%@.plist", mapNo, (isDeviceIPad()?@"~ipad":@"")]];
 	NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
 	
-	height = [dict count];
+	uint width;
+	uint height = [dict count];
 	for( uint tr=0; tr<height; tr++ ){
 		NSDictionary *trData = [dict objectForKey:[NSString stringWithFormat:@"tr%u", tr]];
 		
@@ -90,6 +90,7 @@
 		}
 	}
 
+    // Update oriantations for "Special" tiles
 	[self rotateChar];
 	[self rotateExit];
 }
@@ -156,9 +157,6 @@
 
 
 - (void)addTileWithData:(NSArray *)data x:(NSUInteger)x y:(NSUInteger)y {
-
-	CGPoint tilePos = CGPointMake(x *TILE_SIZE() +TILE_SIZE()/2, y *TILE_SIZE() +TILE_SIZE()/2);
-    
 	
 	NSUInteger side0 = [[data objectAtIndex:0] intValue];
 	NSUInteger side1 = [[data objectAtIndex:1] intValue];
@@ -166,7 +164,7 @@
 	NSUInteger side3 = [[data objectAtIndex:3] intValue];
 	
     
-    // Remove helpers
+    // Remove helpers (white lines in map editor)
     if( side0 & ZeroPathToTop )     side0 ^= ZeroPathToTop;
     if( side0 & ZeroPathToRight )   side0 ^= ZeroPathToRight;
     if( side0 & ZeroPathToBottom )  side0 ^= ZeroPathToBottom;
@@ -187,6 +185,8 @@
     if( side3 & ZeroPathToBottom )  side3 ^= ZeroPathToBottom;
     if( side3 & ZeroPathToLeft )    side3 ^= ZeroPathToLeft;
     
+    // Possition of tile in points
+	CGPoint tilePos = CGPointMake(x *TILE_SIZE() +TILE_SIZE() /2, y *TILE_SIZE() +TILE_SIZE() /2);
     
 	if( side0 == WalkPathEntrance ){
 		
@@ -317,7 +317,7 @@
 
 
 - (void)setPath:(CCSprite *)path fromSide:(NSUInteger)side atX:(NSUInteger)x y:(NSUInteger)y {
-	CGPoint tilePos = CGPointMake(x *TILE_SIZE() +TILE_SIZE()/2, y *TILE_SIZE() +TILE_SIZE()/2);
+	CGPoint tilePos = CGPointMake(x *TILE_SIZE() +TILE_SIZE() /2, y *TILE_SIZE() +TILE_SIZE() /2);
 	NSString *posName = [NSString stringWithFormat:@"%i|%i|%i", x, y, side];
 
 	if( ![_mapTiles objectForKey:posName] ){
@@ -372,7 +372,7 @@
 		}
 		case UIDeviceOrientationPortrait:
 		case UIDeviceOrientationPortraitUpsideDown: {
-            [_backSprite setPosition:CGPointMake(_winSize.width -[_backSprite contentSize].width /1.5f, 0 +[_backSprite contentSize].height /1.5f)];
+            [_backSprite setPosition:CGPointMake(_winSize.width -[_backSprite contentSize].width /1.5f, [_backSprite contentSize].height /1.5f)];
             [_backSprite setRotation:90];
 			break;
 		}
@@ -412,10 +412,11 @@
 		return;
 	}
 	
-	// Where wee looking
+	// Where character looking at
 	x	= [_char lookingAtGridPosition].x;
 	y	= [_char lookingAtGridPosition].y;
 	
+    // What are possibile patches
 	_possiblePaths = _map[x][y][[_char opositeSideOfSide:[_char rotationSide]]];
 
 	if(	  _possiblePaths == WalkPathToTop
