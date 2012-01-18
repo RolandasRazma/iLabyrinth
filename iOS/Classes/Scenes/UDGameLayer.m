@@ -22,9 +22,7 @@
 - (id)init {
 	if( (self = [super init]) ){
 		[self setIsTouchEnabled: YES];
-		
-        _crossRoads     = 0;
-        
+
 		_winSize		= [[CCDirector sharedDirector] winSize];
 		_mapTiles		= [[NSMutableDictionary alloc] initWithCapacity:150];
 		
@@ -345,11 +343,6 @@
 }
 
 
-- (void)increaseCrossRoadsPassed {
-    _crossRoads++;
-}
-
-
 #pragma mark -
 #pragma mark CCNode
 
@@ -433,7 +426,6 @@
 	   || _possiblePaths == WalkPathWalk 
 	){
 		//one way only
-        [self increaseCrossRoadsPassed];
 		[_char walkByPath:_possiblePaths];
 		return;
 	}else{
@@ -455,6 +447,8 @@
 	
 	CGPoint touchPoint = [self convertTouchToNodeSpace:[touches anyObject]];
 	
+    
+    // Is back button clicked?
 	CGSize mySize = [_backSprite textureRect].size;
 	mySize.width  *= scaleX_;
 	mySize.height *= scaleY_;
@@ -466,7 +460,8 @@
 		return;
 	}
 	
-	
+    
+	// If character still animating don't do anything
 	if( [_char isBussy] ) return;
 	
 	
@@ -512,16 +507,12 @@
 	
 	// Can we walk
 	if( (side == SideTop) && (_possiblePaths & WalkPathToTop) ){
-        [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToTop];
 	}else if( side == SideRight && (_possiblePaths & WalkPathToRight) ){
-        [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToRight];
 	}else if( side == SideBottom && (_possiblePaths & WalkPathToBottom) ){
-        [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToBottom];
 	}else if( side == SideLeft && (_possiblePaths & WalkPathToLeft) ){
-        [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToLeft];
 	}
 	

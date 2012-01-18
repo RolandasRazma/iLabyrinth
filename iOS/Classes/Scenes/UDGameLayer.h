@@ -37,7 +37,4 @@
 
 - (void)deviceOrientationDidChange;
 
-
-- (void)increaseCrossRoadsPassed;
-
 @end
