@@ -76,7 +76,7 @@
 	
 	CGPoint pathPart1 = CGPointZero;
 	CGPoint pathPart2 = CGPointZero;
-	NSUInteger side	  = 0;
+	NSInteger side	  = -1;
 		
 	switch ( [self opositeSideOfSide:[self rotationSide]] ) {
 		case SideTop: {
@@ -197,6 +197,7 @@
 		}
 	}
 	
+    // Will character walk straight line, or will he will make turn?
 	if( pathPart2.x == 0 && pathPart2.y == 0 ){
 		[self runAction:[CCSequence actions: 
 						 [CCCallFunc actionWithTarget:_delegate selector:@selector(charWillBeginWalking)],
@@ -260,18 +261,17 @@
 
 
 - (void)nextFrame {
-    //setDisplayFrameWithAnimationName
-	//[self setDisplayFrame:@"walk" index:_charFrame];
+    // Manualy advance animation frame
     [self setDisplayFrameWithAnimationName:@"walk" index:_charFrame];
 
-	_charFrame++;
-	if( _charFrame > 7 ) _charFrame = 0;
+	if( ++_charFrame > 7 ) _charFrame = 0;
 }
 
 
 - (void)reset {
 	_charFrame=2;
-	//[self setDisplayFrame:@"walk" index:1];
+
+    // Reset animation frame
     [self setDisplayFrameWithAnimationName:@"walk" index:1];
 }
 

@@ -325,8 +325,7 @@
 		[map addChild:lockSprite];        
 	}
 	
-    
-    if( [[CCDirector sharedDirector] contentScaleFactor] > 1 ){
+    if( [[CCDirector sharedDirector] contentScaleFactor] > 1.0f ){
         [map setScale:0.9f];
     }
     
@@ -344,11 +343,6 @@
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     _didScroll = NO;
     _touchDownLocation = [self convertTouchToNodeSpace: [touches anyObject]];
-    /*
-    _touchDownLocation = [[touches anyObject] locationInView: [[touches anyObject] view]];
-    _touchDownLocation = [_backgroundLayer convertToNodeSpace:_touchDownLocation];    
-    _touchDownLocation = [[CCDirector sharedDirector] convertToGL: _touchDownLocation];
-    */
 }
 
 
@@ -357,7 +351,6 @@
 	if ( [touches count] == 1 ) {
 		UITouch *touch = [touches anyObject];
 		
-        
         CGPoint touchUpLocation = [self convertTouchToNodeSpace: touch];
         
         if( _didScroll == NO && ccpDistance(_touchDownLocation, touchUpLocation) < 20 ) return;
@@ -399,7 +392,7 @@
             [sprite setColor:ccGREEN];
             [[SimpleAudioEngine sharedEngine] playEffect:@"click.caf"];
             
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/app/ballwhirl/id380886785?mt=8"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=380886785&mt=8"]];
             
             break;
         }

@@ -60,9 +60,9 @@
                                                fontSize: (isDeviceIPad()?32:15)];
         
         if( isDeviceIPad() ){
-            [label setPosition:CGPointMake(_winSize.width/2, _winSize.height -240)];
+            [label setPosition:CGPointMake(_winSize.width /2, _winSize.height -240)];
         }else{
-            [label setPosition:CGPointMake(_winSize.width/2, _winSize.height -70)];
+            [label setPosition:CGPointMake(_winSize.width /2, _winSize.height -70)];
         }
 
         [label setColor:ccBLACK];
