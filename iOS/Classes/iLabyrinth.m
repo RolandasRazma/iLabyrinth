@@ -123,8 +123,10 @@ static iLabyrinth *_sharedInstance = nil;
 
 - (BOOL)canPlayMap:(NSUInteger)map {
 #if TARGET_IPHONE_SIMULATOR
+    // If we are on simulator, enable all maps for easyer testing
     return YES;
 #endif
+    
 	if( map == 1 || [_compleatedMaps containsObject:[NSNumber numberWithInt:map]] || [_compleatedMaps containsObject:[NSNumber numberWithInt:map-1]] ){
 		return YES;
 	}

@@ -48,8 +48,7 @@
 		_backgroundLayer = [CCSpriteBatchNode batchNodeWithFile:[iLabyrinth textureName]];
 		[[_backgroundLayer texture] setAliasTexParameters];
 		[self addChild:_backgroundLayer];
-        
-        //[[iLabyrinth sharedInstance] setMap:27 asCompleated:YES];
+
         
 		{
             CCSprite *sand1 = [CCSprite spriteWithSpriteFrameName:@"sand.png"];
@@ -289,26 +288,13 @@
 		}
 
         
-    
-                
-        
+        // Calculate where last map button placed
         _lowestPoint = top;
         for( CCNode *node in [self children] ){
             if( [node isEqual:_backgroundLayer] ) continue;
             _lowestPoint = MIN(_lowestPoint, [node boundingBox].origin.y);
         }
         _lowestPoint = abs(_lowestPoint -20);
-       
-
-		/*
-		{
-			CCSprite *feets = [CCSprite spriteWithSpriteFrameName:@"pedos.png"];
-			[feets setPosition:ccp( 100, _winSize.height -190)];
-			[feets setRotation:90];
-			[self addChild:feets];
-			[self addButtonOfMapNo:11 at:ccp( 150, _winSize.height -190)];	
-		}
-		*/
 	}
 	
 	return self;

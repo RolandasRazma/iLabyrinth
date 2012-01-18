@@ -334,7 +334,7 @@
     
 	[[iLabyrinth sharedInstance] setMap:_mapNo asCompleated:YES];
 
-    if( _mapNo == 39 ){
+    if( _mapNo == TOTAL_MAPS ){
         [[CCDirector sharedDirector] replaceScene:[CCTransitionSplitRows transitionWithDuration:1.0f scene:[UDGameEndScene node]]];
     }else{
         [[CCDirector sharedDirector] replaceScene:[CCTransitionSplitRows transitionWithDuration:1.0f scene:[UDPickMapScene node]]];
@@ -355,7 +355,6 @@
 
 - (void)onEnterTransitionDidFinish {
 	[super onEnterTransitionDidFinish];
-	
 	[self charDidFinishWalking];
 }
 
@@ -413,7 +412,7 @@
 		return;
 	}
 	
-	//Where wee looking
+	// Where wee looking
 	x	= [_char lookingAtGridPosition].x;
 	y	= [_char lookingAtGridPosition].y;
 	
@@ -425,10 +424,11 @@
 	   || _possiblePaths == WalkPathToLeft
 	   || _possiblePaths == WalkPathWalk 
 	){
-		//one way only
+		// If player can go one way only - go there
 		[_char walkByPath:_possiblePaths];
 		return;
 	}else{
+        // Highlite where player can go
 		NSString *posName = [NSString stringWithFormat:@"%i|%i|%i", x, y, [_char opositeSideOfSide:[_char rotationSide]]];
 		for( CCSprite *path in [_mapTiles objectForKey:posName] ){
 			[path setColor:ccGREEN];

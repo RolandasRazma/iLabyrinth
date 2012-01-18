@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
+#define TOTAL_MAPS 39
+
+
 static float TILE_SIZE(){
     return ((isDeviceIPad())?64.0f:32.0f);
 }
