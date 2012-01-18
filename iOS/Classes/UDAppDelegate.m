@@ -31,6 +31,7 @@
 
 
 - (void)dealloc {
+    [_deviceOriantationTimer invalidate];
 	[_window release];
 	[super dealloc];
 }
@@ -137,6 +138,8 @@
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    [_deviceOriantationTimer invalidate], _deviceOriantationTimer = nil;
+    
 	[[CCDirector sharedDirector] pause];
 	[[CCDirector sharedDirector] stopAnimation];
 
@@ -146,6 +149,8 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    [_deviceOriantationTimer invalidate], _deviceOriantationTimer = nil;
+    
 	[[CCDirector sharedDirector] stopAnimation];
 	[[CCDirector sharedDirector] pause];
 
@@ -158,11 +163,8 @@
 	[[CCDirector sharedDirector] stopAnimation];
 	[[CCDirector sharedDirector] resume];
 	[[CCDirector sharedDirector] startAnimation];
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-
+    
+    [self updateDeviceOrientation];
 }
 
 
@@ -172,7 +174,8 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-	// Stop listening for oriantation
+	// Stop listening for oriantation updates
+    [_deviceOriantationTimer invalidate], _deviceOriantationTimer = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
     
