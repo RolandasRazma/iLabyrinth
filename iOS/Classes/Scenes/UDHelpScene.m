@@ -1,5 +1,5 @@
 //
-//  UDHelpLayer.m
+//  UDHelpScene.m
 //  iLabyrinth
 //
 //  Created by Rolandas Razma on 7/4/10.
