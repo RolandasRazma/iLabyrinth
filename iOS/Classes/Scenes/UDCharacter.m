@@ -199,19 +199,19 @@
 	
 	if( pathPart2.x == 0 && pathPart2.y == 0 ){
 		[self runAction:[CCSequence actions: 
-						 [CCCallFunc actionWithTarget:delegate selector:@selector(charWillBeginWalking)],
+						 [CCCallFunc actionWithTarget:_delegate selector:@selector(charWillBeginWalking)],
 						 [CCMoveBy actionWithDuration:0.5f position:pathPart1],
 						 [CCCallFunc actionWithTarget:self selector:@selector(reset)],
-						 [CCCallFunc actionWithTarget:delegate selector:@selector(charDidFinishWalking)],
+						 [CCCallFunc actionWithTarget:_delegate selector:@selector(charDidFinishWalking)],
 						 nil]];
 	}else{
 		[self runAction:[CCSequence actions: 
-						 [CCCallFunc actionWithTarget:delegate selector:@selector(charWillBeginWalking)],
+						 [CCCallFunc actionWithTarget:_delegate selector:@selector(charWillBeginWalking)],
 						 [CCMoveBy actionWithDuration:0.5f position:pathPart1], 
 						 [CCCallFuncND actionWithTarget:self selector:@selector(rotateNode:toSide:) data:(void *)side],
 						 [CCMoveBy actionWithDuration:0.5f position:pathPart2], 
 						 [CCCallFunc actionWithTarget:self selector:@selector(reset)],
-						 [CCCallFunc actionWithTarget:delegate selector:@selector(charDidFinishWalking)],
+						 [CCCallFunc actionWithTarget:_delegate selector:@selector(charDidFinishWalking)],
 						 nil]];
 	}
 }
@@ -276,5 +276,5 @@
 }
 
 
-@synthesize delegate;
+@synthesize delegate=_delegate;
 @end

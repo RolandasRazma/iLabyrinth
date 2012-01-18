@@ -14,9 +14,9 @@
 
 
 @interface UDCharacter : CCSprite {
-    id <UDCharacterDelegate> delegate;
-	CGPoint		_lastFramePos;
-	NSUInteger	_charFrame;
+    id <UDCharacterDelegate>_delegate;
+	CGPoint                 _lastFramePos;
+	NSUInteger              _charFrame;
 }
 
 @property(nonatomic, assign) id delegate;

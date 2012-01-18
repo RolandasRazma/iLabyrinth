@@ -12,19 +12,19 @@
 
 
 @interface UDGameLayer : CCLayer <CCStandardTouchDelegate, UDCharacterDelegate> {
-	CGSize			_winSize;
+	CGSize              _winSize;
 	CCSpriteBatchNode	*_backgroundLayer;
-	UDCharacter		*_char;
-	CCSprite		*_exit;
+	UDCharacter         *_char;
+	CCSprite            *_exit;
 	
-	NSUInteger		_mapNo;
+	NSUInteger          _mapNo;
 	NSMutableDictionary	*_mapTiles;
-	NSUInteger		_map[100][100][4];
-	NSUInteger		possiblePaths;
+	NSUInteger          _map[100][100][4];
+	NSUInteger          _possiblePaths;
 	
-	CCSprite		*_backSprite;
+	CCSprite            *_backSprite;
     
-    NSUInteger      _crossRoads;
+    NSUInteger          _crossRoads;
 }
 
 - (void)loadMapNo:(NSUInteger)mapNo;

@@ -17,9 +17,8 @@
 
 
 @interface UDHelpLayer : CCLayer {
-    CCSprite *_backSprite;
-    CGSize  _winSize;
-    UITextView *textView;
+    CCSprite    *_backSprite;
+    CGSize      _winSize;
 }
 
 @end

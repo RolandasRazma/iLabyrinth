@@ -23,16 +23,16 @@
 
 - (id)initWithMap:(NSUInteger)mapNo {
 	if( (self = [super init]) ){
-        gameLayer = [UDGameLayer node];
-		[gameLayer loadMapNo:mapNo];
-		[self addChild:gameLayer];
+        _gameLayer = [UDGameLayer node];
+		[_gameLayer loadMapNo:mapNo];
+		[self addChild:_gameLayer];
 	}
 	return self;
 }
 
 
 - (void)deviceOrientationDidChange {
-    [gameLayer deviceOrientationDidChange];
+    [_gameLayer deviceOrientationDidChange];
 }
 
 

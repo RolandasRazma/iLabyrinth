@@ -11,7 +11,7 @@
 
 
 @interface UDGameScene : CCScene {
-    UDGameLayer *gameLayer;
+    UDGameLayer *_gameLayer;
 }
 
 + (id)sceneWithMap:(NSUInteger)mapNo;

@@ -424,17 +424,17 @@
 	x	= [_char lookingAtGridPosition].x;
 	y	= [_char lookingAtGridPosition].y;
 	
-	possiblePaths = _map[x][y][[_char opositeSideOfSide:[_char rotationSide]]];
+	_possiblePaths = _map[x][y][[_char opositeSideOfSide:[_char rotationSide]]];
 
-	if(	  possiblePaths == WalkPathToTop
-	   || possiblePaths == WalkPathToRight
-	   || possiblePaths == WalkPathToBottom
-	   || possiblePaths == WalkPathToLeft
-	   || possiblePaths == WalkPathWalk 
+	if(	  _possiblePaths == WalkPathToTop
+	   || _possiblePaths == WalkPathToRight
+	   || _possiblePaths == WalkPathToBottom
+	   || _possiblePaths == WalkPathToLeft
+	   || _possiblePaths == WalkPathWalk 
 	){
 		//one way only
         [self increaseCrossRoadsPassed];
-		[_char walkByPath:possiblePaths];
+		[_char walkByPath:_possiblePaths];
 		return;
 	}else{
 		NSString *posName = [NSString stringWithFormat:@"%i|%i|%i", x, y, [_char opositeSideOfSide:[_char rotationSide]]];
@@ -508,19 +508,19 @@
 	uint x	= [_char lookingAtGridPosition].x;
 	uint y	= [_char lookingAtGridPosition].y;
 	
-	possiblePaths = _map[x][y][[_char opositeSideOfSide:[_char rotationSide]]];
+	_possiblePaths = _map[x][y][[_char opositeSideOfSide:[_char rotationSide]]];
 	
 	// Can we walk
-	if( (side == SideTop) && (possiblePaths & WalkPathToTop) ){
+	if( (side == SideTop) && (_possiblePaths & WalkPathToTop) ){
         [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToTop];
-	}else if( side == SideRight && (possiblePaths & WalkPathToRight) ){
+	}else if( side == SideRight && (_possiblePaths & WalkPathToRight) ){
         [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToRight];
-	}else if( side == SideBottom && (possiblePaths & WalkPathToBottom) ){
+	}else if( side == SideBottom && (_possiblePaths & WalkPathToBottom) ){
         [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToBottom];
-	}else if( side == SideLeft && (possiblePaths & WalkPathToLeft) ){
+	}else if( side == SideLeft && (_possiblePaths & WalkPathToLeft) ){
         [self increaseCrossRoadsPassed];
 		[_char walkByPath:WalkPathToLeft];
 	}

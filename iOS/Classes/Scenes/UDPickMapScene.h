@@ -18,12 +18,12 @@
 
 @interface UDPickMapLayer : CCLayer {
 	CCSpriteBatchNode	*_backgroundLayer;
-	CGSize			_winSize;
-	CCSprite		*_backSprite;
+	CGSize              _winSize;
+	CCSprite            *_backSprite;
     
-    CGPoint         _touchDownLocation;
-    BOOL            _didScroll;
-    float           _lowestPoint;
+    CGPoint             _touchDownLocation;
+    BOOL                _didScroll;
+    float               _lowestPoint;
 }
 
 - (CCSprite *)addButtonOfMapNo:(NSUInteger)mapNo at:(CGPoint)pos;

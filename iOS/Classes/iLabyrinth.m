@@ -12,7 +12,6 @@
 
 
 @implementation iLabyrinth
-@synthesize scrollOffset;
 
 
 static iLabyrinth *_sharedInstance = nil;
@@ -24,8 +23,8 @@ static iLabyrinth *_sharedInstance = nil;
 
 - (id)init {
 	if( (self = [super init]) ){
-		compleatedMaps  = [[NSMutableSet alloc] initWithCapacity:50];
-        scrollOffset    = 0;
+		_compleatedMaps  = [[NSMutableSet alloc] initWithCapacity:50];
+        _scrollOffset    = 0;
 	}
 	return self;
 }
@@ -35,8 +34,8 @@ static iLabyrinth *_sharedInstance = nil;
 	if( (self = [self init]) ){
 		_sharedInstance = [self retain];
         
-		[compleatedMaps release];
-		compleatedMaps  = [[NSMutableSet alloc] initWithSet:[coder decodeObjectForKey:@"compleatedMaps"]];
+		[_compleatedMaps release];
+		_compleatedMaps  = [[NSMutableSet alloc] initWithSet:[coder decodeObjectForKey:@"compleatedMaps"]];
         //        scrollOffset    = [coder decodeIntegerForKey:@"scrollOffset"];
 	}
 	
@@ -45,14 +44,14 @@ static iLabyrinth *_sharedInstance = nil;
 
 
 - (void)encodeWithCoder:(NSCoder *)coder { 
-	[coder encodeObject:compleatedMaps forKey:@"compleatedMaps"];
+	[coder encodeObject:_compleatedMaps forKey:@"compleatedMaps"];
     //    [coder encodeInteger:scrollOffset forKey:@"scrollOffset"];
 }
 
 
 - (void)dealloc {
 	_sharedInstance = nil;
-	[compleatedMaps release];
+	[_compleatedMaps release];
 	[super dealloc];
 }
 
@@ -115,9 +114,9 @@ static iLabyrinth *_sharedInstance = nil;
 
 - (void)setMap:(NSUInteger)map asCompleated:(BOOL)compleated {
 	if( compleated ){
-		[compleatedMaps addObject:[NSNumber numberWithInt:map]];
+		[_compleatedMaps addObject:[NSNumber numberWithInt:map]];
 	}else{
-		[compleatedMaps removeObject:[NSNumber numberWithInt:map]];
+		[_compleatedMaps removeObject:[NSNumber numberWithInt:map]];
 	}
 }
 
@@ -126,11 +125,12 @@ static iLabyrinth *_sharedInstance = nil;
 #if TARGET_IPHONE_SIMULATOR
     return YES;
 #endif
-	if( map == 1 || [compleatedMaps containsObject:[NSNumber numberWithInt:map]] || [compleatedMaps containsObject:[NSNumber numberWithInt:map-1]] ){
+	if( map == 1 || [_compleatedMaps containsObject:[NSNumber numberWithInt:map]] || [_compleatedMaps containsObject:[NSNumber numberWithInt:map-1]] ){
 		return YES;
 	}
 	return NO;
 }
 
 
+@synthesize scrollOffset=_scrollOffset;
 @end

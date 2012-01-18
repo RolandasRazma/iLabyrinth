@@ -43,8 +43,8 @@ typedef enum {
 
 
 @interface iLabyrinth : NSObject {
-	NSMutableSet	*compleatedMaps;
-    NSInteger       scrollOffset;
+	NSMutableSet	*_compleatedMaps;
+    NSInteger       _scrollOffset;
 }
 
 @property(nonatomic, readwrite, assign) NSInteger scrollOffset;
