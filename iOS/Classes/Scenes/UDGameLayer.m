@@ -137,16 +137,16 @@
 
 				//check where char can go
 				if( y != 0 && _map[x][y-1][SideTop] && !(_map[x][y-1][SideTop] & WalkPathNoPath) ){
-					[_exit setRotation: 0 *90];
+					[_exit setRotation: SideTop *90];
 				}else if( _map[x][y+1][SideBottom] && !(_map[x][y+1][SideBottom] & WalkPathNoPath) ){
-					[_exit setRotation: 2 *90];
+					[_exit setRotation: SideBottom *90];
 				}
 				else if( x != 0 && _map[x-1][y][SideRight] && !(_map[x-1][y][SideRight] & WalkPathNoPath) ){
-					[_exit setRotation: 1 *90];
+					[_exit setRotation: SideRight *90];
 				}else if( _map[x+1][y][SideLeft] == 0 || !(_map[x+1][y][SideLeft] & WalkPathNoPath) ){
-					[_exit setRotation: 3 *90];
+					[_exit setRotation: SideLeft *90];
 				}else if( y == 0 ){
-                    [_exit setRotation: 2 *90];
+                    [_exit setRotation: SideBottom *90];
                 }
                 
 				return;
