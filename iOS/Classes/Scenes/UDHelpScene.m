@@ -53,9 +53,7 @@
 		[_backSprite setPosition:CGPointMake(_winSize.width, _winSize.height)];
 		[backgroundLayer addChild:_backSprite];
      
-        NSError *error = nil;
-
-        CCLabelTTF *label = [CCLabelTTF labelWithString: [NSString stringWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"about" ofType:nil] encoding:NSUTF8StringEncoding error:&error] 
+        CCLabelTTF *label = [CCLabelTTF labelWithString: [NSString stringWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"about" ofType:nil] encoding:NSUTF8StringEncoding error:NULL] 
                                              dimensions: CGSizeMake(_winSize.width -20, _winSize.height) 
                                               alignment: UITextAlignmentCenter 
                                                fontName: @"Arial" 
