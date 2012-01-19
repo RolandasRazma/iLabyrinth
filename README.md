@@ -18,3 +18,9 @@ LICENSE
 for Cocos2D and CocosDenshion see their license<br>
 all code in /MapEditor/* and /iOS/Classes/* are licensed under GPL v2<br>
 all maps, images and sounds ( /iOS/Resources/* /iOS/Resources-iPad/* /iOS/Resources-Lite/* /MapEditor/Resources/Images/* ) are licensed under Creative Commons Attribution-NonCommercial-NoDerivs ( CC BY-NC-ND )
+
+Screenshots
+=========
+<img src="http://a4.mzstatic.com/us/r1000/075/Purple/40/a7/68/mzl.bdlyatfu.320x480-75.jpg" width="480" />
+<img src="http://a3.mzstatic.com/us/r1000/077/Purple/eb/55/b7/mzl.gxnwmbsg.480x480-75.jpg" width="480" />
+<img src="http://a3.mzstatic.com/us/r1000/105/Purple/70/d2/c7/mzl.cgpktopx.320x480-75.jpg" width="480" />
