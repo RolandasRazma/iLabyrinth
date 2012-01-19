@@ -1,6 +1,6 @@
 iLabyrinth
 =========
-iOS game that still earns some money on AppStore :) 
+iOS game that still earns some money :) 
 You can download it from <a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=380886785&mt=8">App Store</a>
 
 game written for iPhone/iPod Touch and iPad in Objective-C using <a href="https://github.com/cocos2d/cocos2d-iphone">Cocos2D-iphone</a>. There is 2 build targets - normal and lite versions.
