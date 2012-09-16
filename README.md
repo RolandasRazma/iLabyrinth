@@ -23,4 +23,6 @@ LICENSE
 =========
 for Cocos2D and CocosDenshion see their license<br>
 all code in /MapEditor/* and /iOS/Classes/* are licensed under GPL v2<br>
-all maps, images and sounds ( /iOS/Resources/* /iOS/Resources-iPad/* /iOS/Resources-Lite/* /MapEditor/Resources/Images/* ) are licensed under Creative Commons Attribution-NonCommercial-NoDerivs ( CC BY-NC-ND )
+all maps, images and sounds ( /iOS/Resources/* /iOS/Resources-iPad/* /iOS/Resources-Lite/* /MapEditor/Resources/Images/* ) are licensed under Creative Commons Attribution-NonCommercial-NoDerivs ( CC BY-NC-ND )<br>
+<br>
+please, don't steal like <a href="http://itunes.apple.com/gb/app/wheres-my-path/id550891187?mt=8">Where's My Path?</a>. It's perfectly fine to use code, but please, please, please make your own artwork.
